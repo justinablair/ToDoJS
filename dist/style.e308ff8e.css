@@ -17,17 +17,6 @@ h1 {
     "Lucida Grande", sans-serif;
 }
 
-/* .circle {
-  background: burlywood;
-  border-radius: 40%;
-  display: inline-block;
-  line-height: 1;
-  margin: 4px;
-  text-align: center;
-
-
-} */
-
 #todo {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -81,13 +70,12 @@ h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 /* input field */
 .input {
   position: relative;
   margin-top: 10px;
   border: 0;
-  border-bottom:2px solid grey;
+  border-bottom: 2px solid grey;
   padding: 12px;
   outline: 0;
   margin: auto;
@@ -95,8 +83,7 @@ h1 {
 
   background: transparent;
   transition: border-color 0.2s;
- width: 30%;
-  
+  width: 30%;
 }
 
 /*Delete button */
@@ -130,7 +117,6 @@ h1 {
   font-weight: bold;
   /*text-decoration: line-through; */
 }
-
 
 /*manual task */
 

@@ -8129,14 +8129,14 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var todoSection = document.querySelector('#todos');
-var todoTemplate = document.querySelector('#todo-template');
+var todoSection = document.querySelector("#todos");
+var todoTemplate = document.querySelector("#todo-template");
 
-document.querySelector('#push').onclick = function () {
-  if (document.querySelector('#newtask input').value.length == 0) {
+document.querySelector("#push").onclick = function () {
+  if (document.querySelector("#newtask input").value.length == 0) {
     alert("Please enter a task");
   } else {
-    document.querySelector('#tasks').innerHTML += "\n          <div class=\"task\"\n              <span id=\"taskname\" >\n                  ".concat(document.querySelector('#newtask input').value, "\n              </span>\n             \n              <button class=\"delete\">\n                 x\n              </button>\n          </div>\n      ");
+    document.querySelector("#tasks").innerHTML += "\n          <div class=\"task\"\n              <span id=\"taskname\" >\n                  ".concat(document.querySelector("#newtask input").value, "\n              </span>\n             \n              <button class=\"delete\">\n                 x\n              </button>\n          </div>\n      ");
     var current_tasks = document.querySelectorAll(".delete");
 
     for (var i = 0; i < current_tasks.length; i++) {
@@ -8163,7 +8163,7 @@ function _getData() {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return fetch('https://jsonplaceholder.typicode.com/users/1/todos');
+            return fetch("https://jsonplaceholder.typicode.com/users/1/todos");
 
           case 2:
             todoData = _context.sent;
@@ -8172,25 +8172,19 @@ function _getData() {
 
           case 5:
             todos = _context.sent;
-            i = 0; // throw 'Get Data Error';
-            // console.log(todos);
-
+            i = 0;
             todos.forEach(function (todo) {
               i++;
 
               if (i < 10) {
                 var title = todo.title;
-                var completed = todo.completed; // document.querySelector('#push').onclick = function(){
-                //   if(document.querySelector(‘#tasks).value.length == 1){
-                //    let el = document.querySelector('.target');
-                //   el.style.setProperty('text-decoration', 'line-through');
-
-                fetch('https://jsonplaceholder.typicode.com/users/1/todos').then(function (res) {
+                var completed = todo.completed;
+                fetch("https://jsonplaceholder.typicode.com/users/1/todos").then(function (res) {
                   return res.text();
                 }).then(function (res) {
                   var newTodo = document.importNode(todoTemplate.content, true);
-                  var todoTitle = newTodo.querySelector('.todo__title');
-                  var todoCompleted = newTodo.querySelector('.todo__completed');
+                  var todoTitle = newTodo.querySelector(".todo__title");
+                  var todoCompleted = newTodo.querySelector(".todo__completed");
                   todoTitle.innerText = title;
                   todoCompleted.innerText = completed;
                   todoSection.appendChild(newTodo);
@@ -8237,7 +8231,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64096" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64362" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
