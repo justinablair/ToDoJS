@@ -1,25 +1,26 @@
-import "babel-polyfill";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 const todoSection = document.querySelector("#todos");
 const todoTemplate = document.querySelector("#todo-template");
+const DOMobject=document.createElement('div')
 
 document.querySelector("#push").onclick = function () {
   if (document.querySelector("#newtask input").value.length == 0) {
     alert("Please enter a task");
   } else {
     document.querySelector("#tasks").innerHTML += `
-          <div class="task"
-              <span id="taskname" >
+          <div class="task">
                   ${document.querySelector("#newtask input").value}
-              </span>
-             
+            
               <button class="delete">
                  x
               </button>
           </div>
       `;
 
-    var current_tasks = document.querySelectorAll(".delete");
-    for (var i = 0; i < current_tasks.length; i++) {
+    const current_tasks = document.querySelectorAll(".delete");
+    for (let i = 0; i < current_tasks.length; i++) {
       current_tasks[i].onclick = function () {
         this.parentNode.remove();
       };
@@ -27,9 +28,10 @@ document.querySelector("#push").onclick = function () {
   }
 };
 
-getData().catch((err) => console.error(err));
 
+getData().catch((err) => console.error(err));
 async function getData() {
+  
   const todoData = await fetch(
     "https://jsonplaceholder.typicode.com/users/1/todos"
   );
@@ -53,7 +55,8 @@ async function getData() {
           todoCompleted.innerText = completed;
           todoSection.appendChild(newTodo);
         })
-        .catch((err) => console.error(err));
+       
     }
   });
 }
+
